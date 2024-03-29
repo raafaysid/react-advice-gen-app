@@ -11,10 +11,15 @@
     background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('./images/city.jpg');
     background-position: center;
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items: center;
     text-align: center;
+    justify-content: center; /* Or 'center' if you want everything centered vertically */
+    padding: 20px;
+    min-height: 100vh; /* Full height */
 }
+
 
 .card {
     background-color: white;
@@ -68,7 +73,46 @@
     animation: storm 0.7s ease-in-out both;
     animation-delay: 0.06s;
   }
-    
+  .favorites-card {
+    margin: 20px auto;
+    background: #f9f7f7; /* Lighter or different background for distinction */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+    width: 300px; /* Adjust based on your design */
+    text-align: center;
+  }
+  
+  .favorites-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .favorites-list li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .favorites-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .remove-fav-btn {
+    margin-left: 10px;
+    background-color: #ff4b5c; /* Or any color that fits your design */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .remove-fav-btn:hover {
+    background-color: #ff6b6b; /* Lighter shade for hover effect */
+  }
+  
+  
   @keyframes rotate {
     0% {
       transform: rotate(0deg) translate3d(0, 0, 0);
