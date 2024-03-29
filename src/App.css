@@ -1,157 +1,135 @@
 #root, html, body {
-    margin:0;
-    padding:0;
-    height: 100vh;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .app {
-    height: 100%;
-    background-size:cover;
-    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('./images/city.jpg');
-    background-position: center;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    text-align: center;
-    justify-content: center; /* Or 'center' if you want everything centered vertically */
-    padding: 20px;
-    min-height: 100vh; /* Full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  padding: 20px;
+  min-height: 100vh;
+  background-size: cover;
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('./images/city.jpg');
+  background-position: center;
+  overflow: auto;
 }
-
 
 .card {
-    background-color: white;
-    width:40%;
-    height:40;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
-    border-radius: 25px;
-    padding: 2%;
-    box-shadow: 10px 10px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to top, #f9f9f9, #ffffff 100%);
+  width: 40%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 2vh auto;
+}
 
+.card:hover {
+  transform: translateY(-30px);
+  box-shadow: 0 45px 90px rgba(0, 0, 0, 0.45), 0 55px 110px rgba(0, 0, 0, 0.4);
 }
+
+
+
+
+
+
 .heading {
-    display:flex;
-    align-items: center;
-    height:100px;
-    font-family: "Playfair Display", serif;
-    
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
 }
+
 .button {
-    position: relative;
-    outline: none;
-    text-decoration: none;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    height: 80px;
-    width: 310px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid rgba(22, 76, 167, 0.6);
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 80px;
+  width: 310px;
+  opacity: 1;
+  background-color: #ffffff;
+  border: 2px solid rgba(22, 76, 167, 0.6);
+  transition: all 0.3s ease; /* Smooth transition for various properties */
+  color: #164ca7; /* Button text color */
+}
+
+.button span {
+  color: inherit; /* Ensures the text color transitions smoothly with the button */
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.button:hover {
+  transform: scale(1.05); /* Slightly enlarges the button */
+  background-color: #164ca7; /* Changes background color */
+  color: #ffffff; /* Changes text color */
+}
+
+.button:hover span {
+  color: inherit; /* Ensure the span inherits the button's text color */
+}
+
+
+.favorites-card {
+  width: 80%; /* Adjust width to match the design */
+  max-height: 40vh; /* Limit height of favorites list */
+  overflow-y: auto; /* Enable scrolling within the favorites */
+  background: #f9f7f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px 0; /* Spacing around the favorites card */
+}
+
+.favorites-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Reset default margins */
+}
+
+.favorites-list li {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.remove-fav-btn {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px; /* Space between advice text and remove button */
+}
+
+.remove-fav-btn:hover {
+  background-color: #ff6b6b;
+}
+
+@media only screen and (max-width: 600px) {
+  .card, .favorites-card {
+      width: 90%; /* Increase width for smaller screens */
   }
-    
-  .button span {
-    color: #164ca7;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.7px;
+
+  .button {
+      width: 80%; /* Make buttons wider on smaller screens */
   }
-    
-  .button:hover {
-    animation: rotate 0.7s ease-in-out both;
-  }
-    
-  .button:hover span {
-    animation: storm 0.7s ease-in-out both;
-    animation-delay: 0.06s;
-  }
-  .favorites-card {
-    margin: 20px auto;
-    background: #f9f7f7; /* Lighter or different background for distinction */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 20px;
-    width: 300px; /* Adjust based on your design */
-    text-align: center;
-  }
-  
-  .favorites-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .favorites-list li {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-  }
-  
-  .favorites-title {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  .remove-fav-btn {
-    margin-left: 10px;
-    background-color: #ff4b5c; /* Or any color that fits your design */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 5px 10px;
-  }
-  
-  .remove-fav-btn:hover {
-    background-color: #ff6b6b; /* Lighter shade for hover effect */
-  }
-  
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-    25% {
-      transform: rotate(3deg) translate3d(0, 0, 0);
-    }
-    50% {
-      transform: rotate(-3deg) translate3d(0, 0, 0);
-    }
-    75% {
-      transform: rotate(1deg) translate3d(0, 0, 0);
-    }
-    100% {
-      transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-  }
-    
-  @keyframes storm {
-    0% {
-      transform: translate3d(0, 0, 0) translateZ(0);
-    }
-    25% {
-      transform: translate3d(4px, 0, 0) translateZ(0);
-    }
-    50% {
-      transform: translate3d(-3px, 0, 0) translateZ(0);
-    }
-    75% {
-      transform: translate3d(2px, 0, 0) translateZ(0);
-    }
-    100% {
-      transform: translate3d(0, 0, 0) translateZ(0);
-    }
-  }  
-  
-  @media only screen and (max-width: 600px) {
-    .card {
-        width: 80%;
-        height: 30%;
-    }
-  }
+}
